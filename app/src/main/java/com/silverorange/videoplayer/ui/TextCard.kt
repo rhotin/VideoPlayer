@@ -20,12 +20,10 @@ fun TextCard(viewModel: MainViewModel) {
             .fillMaxWidth()
             .padding(16.dp)
             .verticalScroll(rememberScrollState()),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = viewModel.state.videoDto?.get(viewModel.libraryIndex)?.description
-                ?: "Description: Unavailable"
-        )
+        val data = viewModel.state.videoDto?.get(viewModel.libraryIndex)
+        Text(text = "Title: " + (data?.title ?: "Unknown"))
+        Text(text = "Author: " + (data?.author?.name ?: "Unknown"))
+        Text(text = "Description: " + (data?.description ?: "Unavailable"))
     }
 }
