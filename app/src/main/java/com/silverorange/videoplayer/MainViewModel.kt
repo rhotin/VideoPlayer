@@ -41,15 +41,6 @@ class MainViewModel @Inject constructor(
 
     private val videoUris = savedStateHandle.getStateFlow("videoUris", emptyList<Uri>())
 
-    val videoItems = videoUris.map { uris ->
-        uris.map { uri ->
-            VideoItem(
-                contentUri = uri,
-                mediaItem = MediaItem.fromUri(uri)
-            )
-        }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
-
     init {
         player.prepare()
     }
