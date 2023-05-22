@@ -13,14 +13,14 @@ import com.silverorange.videoplayer.data.local.VideoItem
 import com.silverorange.videoplayer.data.local.VideoState
 import com.silverorange.videoplayer.domain.repository.VideoRepository
 import com.silverorange.videoplayer.domain.util.Resource
-import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltAndroidApp
+@HiltViewModel
 class MainViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     val player: Player,
