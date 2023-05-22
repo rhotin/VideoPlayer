@@ -65,6 +65,8 @@ class MainViewModel @Inject constructor(
             player.seekToNextMediaItem()
             libraryIndex++
             checkMedia()
+        } else {
+            player.seekTo(libraryIndex, 0)
         }
     }
 
@@ -73,6 +75,8 @@ class MainViewModel @Inject constructor(
             player.seekToPreviousMediaItem()
             libraryIndex--
             checkMedia()
+        } else {
+            player.seekTo(libraryIndex, 0)
         }
     }
 
